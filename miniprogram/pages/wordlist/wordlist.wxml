@@ -1,0 +1,12 @@
+
+<form bindsubmit="saveword" bindreset="formReset" class="form">
+  <input placeholder="请输入单词"  name="word" class='formitem' />
+  <input placeholder="请输入含义"  name="description" class="formitem" />
+  <button form-type="submit">输入保存单词</button>
+</form>
+<scroll-view scroll-y class="wlist">
+  <view wx:for="{{wlist}}" wx:key='{{item._id}}' class="item"> 
+    <view class='worditem'>{{item.word}} : {{item.description}}<image class='cancel' bindtap='delword' src="/images/cancel.png" data-id='{{item._id}}'></image></view>
+  </view>
+</scroll-view>
+
