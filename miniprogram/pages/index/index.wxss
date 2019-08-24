@@ -9,10 +9,18 @@
 }
 
 
+.logo {
+  height: 300px;
+  width: 300px;
+
+}
+
 .wlist {
   padding-left: 20px;
   padding: 5px;
   border: 1px #ddd solid;
+  height: 300px;
+
 }
 
 
@@ -34,4 +42,10 @@
   height: 20px;
   width: 20px;
   float:right;
+}
+
+.formitem {
+  height: 30px;
+  text-align: center;
+
 }

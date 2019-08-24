@@ -1,15 +1,17 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="title">
   <text>自填单词卡</text>
+  <image src="/images/logo.png" class="logo"></image>
 </view>
+
 <form bindsubmit="saveword" bindreset="formReset" class="form">
-  <input placeholder="请输入单词"  name="word" />
-  <input placeholder="请输入含义"  name="description" />
+  <input placeholder="请输入单词"  name="word" class='formitem' />
+  <input placeholder="请输入含义"  name="description" class="formitem" />
   <button form-type="submit">输入保存单词</button>
 </form>
-
-<view class="wlist">
+<scroll-view scroll-y class="wlist">
   <view wx:for="{{wlist}}" wx:key='{{item._id}}' class="item"> 
     <view class='worditem'>{{item.word}} : {{item.description}}<image class='cancel' bindtap='delword' src="/images/cancel.png" data-id='{{item._id}}'></image></view>
   </view>
-</view>
+</scroll-view>
+
