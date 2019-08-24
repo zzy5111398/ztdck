@@ -1,2 +1,15 @@
 <!--miniprogram/pages/index/index.wxml-->
-<text>miniprogram/pages/index/index.wxml</text>
+<view class="title">
+  <text>自填单词卡</text>
+</view>
+<form bindsubmit="saveword" bindreset="formReset" class="form">
+  <input placeholder="请输入单词"  name="word" />
+  <input placeholder="请输入含义"  name="description" />
+  <button form-type="submit">输入保存单词</button>
+</form>
+
+<view class="wlist">
+  <view wx:for="{{wlist}}" wx:key='{{item._id}}' class="item"> 
+    <view class='worditem'>{{item.word}} : {{item.description}}<image class='cancel' bindtap='delword' src="/images/cancel.png" data-id='{{item._id}}'></image></view>
+  </view>
+</view>
