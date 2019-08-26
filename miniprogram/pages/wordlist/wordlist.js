@@ -108,25 +108,8 @@ Page({
 
   },
 
-  saveword: function (e) {
-    var form = e.detail.value;
-    var that = this;
-    db.collection('words').add({
-      // data 字段表示需新增的 JSON 数据
-      data: {
-        // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-        word:form.word,
-        description:form.description
-      },
-      success: function (res) {
-        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-        console.log(res),
-        that.onShow()
-      }
-    })
-  },
 
-  delword: function (e) {
+  delWord: function (e) {
     var that = this;
     if (e.currentTarget.dataset.id != 0) {
       db.collection('words').doc(e.currentTarget.dataset.id).remove({
@@ -136,5 +119,11 @@ Page({
         }
       })
     }
-  }
+  },
+  addWord:function() {
+     wx.navigateTo({
+       url: '../addword/addword',
+     })
+  },
+
 })

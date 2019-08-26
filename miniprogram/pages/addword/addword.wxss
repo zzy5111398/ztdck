@@ -1,0 +1,12 @@
+/* miniprogram/pages/addword/addword.wxss */
+
+.form {
+  background-color: #ddd;
+  color: #111;
+  padding-top: 200px;
+}
+.formitem {
+  height: 30px;
+  text-align: center;
+
+}

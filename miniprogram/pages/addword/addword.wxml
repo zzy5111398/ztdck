@@ -1,0 +1,12 @@
+<!--miniprogram/pages/addword/addword.wxml-->
+
+<form bindsubmit="saveword" bindreset="formReset" class="form">
+  <input placeholder="请输入单词"  name="word" class='formitem' bindinput='change'/>
+  <input placeholder="请输入含义"  name="description" class="formitem" />
+  <button form-type="submit">输入保存单词</button>
+</form>
+<view class="description">
+  <view wx:for="{{description}}" wx:key='{{item.part}}'>
+    {{item.part}}:{{item.means}}
+  </view>
+</view>
