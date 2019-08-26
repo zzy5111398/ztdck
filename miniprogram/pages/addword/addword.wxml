@@ -5,8 +5,7 @@
   <input placeholder="请输入含义"  name="description" class="formitem" />
   <button form-type="submit">输入保存单词</button>
 </form>
-<view class="description">
-  <view wx:for="{{description}}" wx:key='{{item.part}}'>
-    {{item.part}}:{{item.means}}
-  </view>
+
+<view wx:for="{{description}}" wx:key='{{item.part}}' class="description">
+  {{item.part}}:{{item.means}}
 </view>

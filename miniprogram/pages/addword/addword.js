@@ -71,7 +71,15 @@ Page({
   saveword: function (e) {
     var form = e.detail.value;
     var that = this;
-    if (form.word){
+    if (!form.word){
+      that.setData({
+        description: [{ 'part': 'notice', 'means': '请输入单词' }]
+      })
+    } else if (!form.description){
+      that.setData({
+        description: [{ 'part': 'notice', 'means': '请输入含义' }]
+      })
+    }else{
       db.collection('words').add({
         // data 字段表示需新增的 JSON 数据
         data: {
@@ -95,10 +103,10 @@ Page({
     var that = this;
     console.log(e.detail.value)
     wx.request({
-      url: 'https://dict-co.iciba.com/api/dictionary.php?', //仅为示例，并非真实的接口地址
+      url: 'https://dict-co.iciba.com/api/dictionary.php?', //金山词霸的查词接口
       data: {
         w: e.detail.value,
-        key: 'DB27558F53FFDF4BC2AA556F1B87879C',
+        key: 'DB27558F53FFDF4BC2AA556F1B87879C',  //自己申请的key
         type: 'json',
       },
       header: {

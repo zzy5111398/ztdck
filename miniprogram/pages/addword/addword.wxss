@@ -10,3 +10,8 @@
   text-align: center;
 
 }
+
+.description{
+  padding-top: 30rpx;
+  border-bottom: 2rpx #ddd solid;
+}
